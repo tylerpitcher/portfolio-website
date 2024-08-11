@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: portfolio
-        image: tylerpitcher/portfolio-website:ab35e8a
+        image: tylerpitcher/portfolio-website:f28da7f
         imagePullPolicy: Always
         ports:
         - containerPort: 80
