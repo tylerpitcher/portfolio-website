@@ -123,8 +123,8 @@ function Resume() {
                   <h3 className="text-base font-bold">{project.title}</h3>
                   <p className="text-base mb-1">{project.description}</p>
                   <div className="flex justify-end gap-2 text-sm">
-                    <a className="underline hover:text-blue-200" href={project.github}>Repo</a>
-                    <a className="underline hover:text-blue-200" href={project.demo}>Code</a>
+                    <a className="underline hover:text-blue-200" href={project.github}>Code</a>
+                    <a className="underline hover:text-blue-200" href={project.demo}>Demo</a>
                   </div>
                 </li>
               ))}
