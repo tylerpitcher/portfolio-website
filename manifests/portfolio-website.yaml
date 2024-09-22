@@ -33,7 +33,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: portfolio-website-ingress
+  name: portfolio-website-ingress-https
 spec:
   entryPoints:
     - websecure
@@ -45,3 +45,19 @@ spec:
       port: 80
   tls:
     secretName: tls-secret
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: portfolio-website-ingress-http
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`tylerpitcher.com`, `www.tylerpitcher.com`)
+    kind: Rule
+    services:
+    - name: portfolio-website-service
+      port: 80
+    middlewares:
+    - name: https-redirect
