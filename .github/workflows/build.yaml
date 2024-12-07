@@ -1,0 +1,20 @@
+name: Docker Build and Publish
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+  workflow_dispatch:
+
+jobs:
+  call:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    uses: tylerpitcher/ci-cd/.github/workflows/build.yaml@main
+    with:
+      dockerfile_path: ./Dockerfile
+      image_name: portfolio-website
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
