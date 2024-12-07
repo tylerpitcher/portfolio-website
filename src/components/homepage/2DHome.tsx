@@ -9,7 +9,7 @@ function Home2D() {
   const handleOnClick = () => setShowInfo(false);
 
   return (
-    <main className="w-screen h-screen">
+    <main className="w-full h-screen">
       <AnimatePresence>
         {showInfo && <InfoScreen onClick={handleOnClick}/>}
       </AnimatePresence>

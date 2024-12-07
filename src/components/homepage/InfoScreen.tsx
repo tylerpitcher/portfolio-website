@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function InfoScreen({ onClick }: any) {
   return (
     <motion.div
-      className="absolute top-0 z-9 w-screen h-screen bg-gray-900 flex flex-col items-center justify-center gap-8 text-center"
+      className="absolute top-0 z-9 w-full h-screen bg-gray-900 flex flex-col items-center justify-center gap-8 text-center"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}

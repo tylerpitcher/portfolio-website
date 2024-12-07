@@ -21,7 +21,7 @@
 .content {
   width: 381px;
   height: 222px;
-  overflow: scroll;
+  overflow-y: scroll;
   border-radius: 3px;
   padding: 0;
   margin: 0;
