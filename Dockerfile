@@ -10,6 +10,10 @@ COPY . .
 # Install dependencies based on package.json and package-lock.json
 RUN npm install
 
+# Create environment variable for analytics
+ARG VITE_GA_TRACKING_ID
+ENV VITE_GA_TRACKING_ID=${VITE_GA_TRACKING_ID}
+
 # Build the application using npm
 RUN npm run build
 

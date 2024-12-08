@@ -6,5 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        VITE_GA_TRACKING_ID: ${VITE_GA_TRACKING_ID}
     ports:
       - "80:80"

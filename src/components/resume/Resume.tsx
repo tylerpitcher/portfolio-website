@@ -2,6 +2,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useContext, useMemo } from "react";
 import { FaCopy } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 import { SnackbarContext, SnackbarProvider } from "./Snackbar";
 import constants from "./details";
 
@@ -51,6 +52,14 @@ function Resume() {
   const summary = useMemo(constants.summary, []);
   const snackbar = useContext(SnackbarContext);
 
+  const handleClick = (event: any) => {
+    ReactGA.event({
+      category: "/",
+      action: "link_click",
+      label: event.target.href,
+    });
+  };
+
   return (
     <div className="bg-gray-900 flex flex-col pt-8">
       <section className="flex flex-col items-center justify-center text-center">
@@ -63,7 +72,11 @@ function Resume() {
             </button>
           </CopyToClipboard>
         </h2>
-        <a className="text-base underline hover:text-blue-200" href={constants.header.github}>
+        <a 
+          className="text-base underline hover:text-blue-200" 
+          href={constants.header.github}
+          onClick={handleClick}
+        >
           {constants.header.github.substring(8)}
         </a>
       </section>
@@ -123,8 +136,20 @@ function Resume() {
                   <h3 className="text-base font-bold">{project.title}</h3>
                   <p className="text-base mb-1">{project.description}</p>
                   <div className="flex justify-end gap-2 text-sm">
-                    <a className="underline hover:text-blue-200" href={project.github}>Code</a>
-                    <a className="underline hover:text-blue-200" href={project.demo}>Demo</a>
+                    <a 
+                      className="underline hover:text-blue-200" 
+                      href={project.github} 
+                      onClick={handleClick}
+                    >
+                      Code
+                    </a>
+                    <a 
+                      className="underline hover:text-blue-200" 
+                      href={project.demo}
+                      onClick={handleClick}
+                    >
+                      Demo
+                    </a>
                   </div>
                 </li>
               ))}
