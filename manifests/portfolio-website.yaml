@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: portfolio-website
-        image: tylerpitcher/portfolio-website:dc3e278
+        image: tylerpitcher/portfolio-website:61ad148
         ports:
         - containerPort: 80
         resources:
