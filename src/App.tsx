@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import ReactGA from "react-ga4";
 import Home2D from "./components/homepage/2DHome";
 import Home3D from "./components/homepage/3DHome";
+import constants from "./constants";
 
 function App() {
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
-    ReactGA.initialize(import.meta.env.VITE_GA_TRACKING_ID || "");
+    ReactGA.initialize(constants.GA_TRACKING_ID);
     ReactGA.send({ hitType: "pageview", page: "/" });
 
     const handleResize = () => {
