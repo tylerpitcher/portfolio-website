@@ -52,6 +52,8 @@ function Resume() {
   const summary = useMemo(constants.summary, []);
   const snackbar = useContext(SnackbarContext);
 
+  const waveSequence = [0, 14, -8, 14, -4, 10, 0];
+
   const handleClick = (event: any) => {
     ReactGA.event({
       category: "/",
@@ -63,7 +65,17 @@ function Resume() {
   return (
     <div className="bg-gray-900 flex flex-col pt-8">
       <section className="flex flex-col items-center justify-center text-center">
-        <h1 className="text-2xl font-bold mb-2">Hi, I'm {constants.header.name}</h1>
+        <h1 className="text-2xl font-bold mb-2">
+          <motion.span
+            className="inline-block mr-2"
+            animate={{ rotate: waveSequence }}
+            whileHover={{ rotate: waveSequence }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
+          >
+            👋
+          </motion.span>
+          Hi, I'm {constants.header.name}!
+        </h1>
         <h2 className="text-base text-lg mb-2 flex flex-row gap-1">
           {constants.header.email}
           <CopyToClipboard text={constants.header.email}>
