@@ -1,5 +1,6 @@
 # portfolio-website
 ![Latest Release](https://img.shields.io/github/v/release/tylerpitcher/portfolio-website)
+
 My personal portfolio website, a showcase of my passions, skills, and experiences.
 
 ## Screenshot
