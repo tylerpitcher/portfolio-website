@@ -1,0 +1,9 @@
+image:
+  repository: tylerpitcher/portfolio-website
+  tag: 1.1.0
+
+deployment:
+  port: 80
+
+ingress:
+  enabled: true
